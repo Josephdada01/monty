@@ -39,7 +39,7 @@ void get_streaming(char *fIlename)
 {
 	int fd;
 
-	fd = open(fIlename, 0_RDONLY);
+	fd = open(fIlename, O_RDONLY);
 	if (fd == -1)
 	{
 		get_stream_flop(fIlename);

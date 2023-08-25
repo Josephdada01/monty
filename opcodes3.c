@@ -25,7 +25,7 @@ void mod(stack_t **stack, unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 	temp2->n = temp2->n % temp1->n;
-	delet_stack();
+	delete_stack();
 
 	args->stack_lenght -= 1;
 }

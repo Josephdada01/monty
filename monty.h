@@ -75,7 +75,7 @@ void free_args(void);
 void free_head(void);
 void free_stack(stack_t *head);
 void free_all_args(void);
-void delet_stack(void);
+void delete_stack(void);
 
 int dprintf(int fd, const char *format, ...);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);

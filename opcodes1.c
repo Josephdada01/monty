@@ -13,7 +13,7 @@ void pop(stack_t **stack, unsigned int line_num)
 		free_all_args();
 		exit(EXIT_FAILURE);
 	}
-	delet_stack();
+	delete_stack();
 	args->stack_lenght -= 1;
 }
 /**
@@ -102,13 +102,32 @@ void pint(stack_t **stack, unsigned int line_num)
 	printf("%d\n", args->head->n);
 }
 /**
- * stack - a function that sets data format to a stack
+ * swap - a function that swap two elements
  * @stack: a pointer to the stack
  * @line_num: the line where the mul function is called
  */
-void stack(stack_t **stack, unsigned int line_num)
+void swap(stack_t **stack, unsigned int line_num)
 {
+	stack_t *temp1, *temp2;
+
 	(void) stack;
-	(void) line_num;
-	args->stack = 1;
+
+	if (args->stack_lenght < 2)
+	{
+		dprintf(2, "L%d: I cant swap, stack is short\n", line_num);
+		free_all_args();
+		exit(EXIT_FAILURE);
+	}
+	temp1 = args->head;
+	temp2 = temp1->next;
+	temp1->next = temp2->next;
+
+	if (temp1->next)
+	{
+		temp1->next->prev = temp1;
+	}
+	temp2->next = temp1;
+	temp1->prev = temp2;
+	temp2->prev = NULL;
+	args->head = temp2;
 }
