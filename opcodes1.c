@@ -9,7 +9,7 @@ void pop(stack_t **stack, unsigned int line_num)
 	(void) stack;
 	if (args->head == NULL)
 	{
-		dprintf(2, "L%d: can not pop an empty stack\n", line_num);
+		dprintf(2, "L%d: can't pop an empty stack\n", line_num);
 		free_all_args();
 		exit(EXIT_FAILURE);
 	}
@@ -26,7 +26,7 @@ void push(stack_t **stack, unsigned int line_num)
 	if (args->n_tokens <= 1 || !(is_number(args->tokens[1])))
 	{
 		free_args();
-		dprintf(2, "L%d: Usage: push int\n", line_num);
+		dprintf(2, "L%d: usage: push integer\n", line_num);
 		exit(EXIT_FAILURE);
 	}
 	*stack = malloc(sizeof(stack_t));
@@ -95,7 +95,7 @@ void pint(stack_t **stack, unsigned int line_num)
 	(void) stack;
 	if (args->head == NULL)
 	{
-		dprintf(2, "L%d: can not pint, stack is empty\n", line_num);
+		dprintf(2, "L%d: can't pint, stack empty\n", line_num);
 		free_all_args();
 		exit(EXIT_FAILURE);
 	}
@@ -114,7 +114,7 @@ void swap(stack_t **stack, unsigned int line_num)
 
 	if (args->stack_lenght < 2)
 	{
-		dprintf(2, "L%d: I cant swap, stack is short\n", line_num);
+		dprintf(2, "L%d: can't swap, stack too short\n", line_num);
 		free_all_args();
 		exit(EXIT_FAILURE);
 	}

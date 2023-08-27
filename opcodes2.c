@@ -12,7 +12,7 @@ void add(stack_t **stack, unsigned int line_num)
 
 	if (args->stack_lenght < 2)
 	{
-		dprintf(2, "L%d: I can't add it, too short\n", line_num);
+		dprintf(2, "L%d: can't add, stack too short\n", line_num);
 		free_all_args();
 		exit(EXIT_FAILURE);
 	}
@@ -47,7 +47,7 @@ void sub(stack_t **stack, unsigned int line_num)
 	(void) stack;
 	if (args->stack_lenght < 2)
 	{
-		dprintf(2, "L%d: I can't sub it, too short\n", line_num);
+		dprintf(2, "L%d: can't sub, stack too short\n", line_num);
 		free_all_args();
 		exit(EXIT_FAILURE);
 	}
@@ -71,7 +71,7 @@ void div_(stack_t **stack, unsigned int line_num)
 	(void) stack;
 	if (args->stack_lenght < 2)
 	{
-		dprintf(2, "L%d: I can't div it, too short", line_num);
+		dprintf(2, "L%d: can't div, stack too short\n", line_num);
 		free_all_args();
 		exit(EXIT_FAILURE);
 	}
@@ -80,7 +80,7 @@ void div_(stack_t **stack, unsigned int line_num)
 
 	if (temp1->n == 0)
 	{
-		dprintf(2, "L%d: dividing by Zero\n", line_num);
+		dprintf(2, "L%d: division by zero\n", line_num);
 		free_all_args();
 		exit(EXIT_FAILURE);
 	}
@@ -100,7 +100,7 @@ void mul(stack_t **stack, unsigned int line_num)
 	(void) stack;
 	if (args->stack_lenght < 2)
 	{
-		dprintf(2, "L%d: I can't multiply it, too short", line_num);
+		dprintf(2, "L%d: can't mul, stack too short\n", line_num);
 		free_all_args();
 		exit(EXIT_FAILURE);
 	}

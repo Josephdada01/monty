@@ -11,7 +11,7 @@ void mod(stack_t **stack, unsigned int line_num)
 	(void) stack;
 	if (args->stack_lenght < 2)
 	{
-		dprintf(2, "L%d: I can't mod, the stack is short\n", line_num);
+		dprintf(2, "L%d: can't mod, stack too short\n", line_num);
 		free_all_args();
 		exit(EXIT_FAILURE);
 	}
@@ -20,7 +20,7 @@ void mod(stack_t **stack, unsigned int line_num)
 
 	if (temp1->n == 0)
 	{
-		dprintf(2, "L%d: dividing by 0\n", line_num);
+		dprintf(2, "L%d: division by zero\n", line_num);
 		free_all_args();
 		exit(EXIT_FAILURE);
 	}
@@ -41,14 +41,14 @@ void pchar(stack_t **stack, unsigned int line_num)
 	(void) stack;
 	if (args->stack_lenght < 2)
 	{
-		dprintf(2, "L%d: I cant pchar, stack not long enough\n", line_num);
+		dprintf(2, "L%d: can't pchar, stack empty\n", line_num);
 		free_all_args();
 		exit(EXIT_FAILURE);
 	}
 	temp1 = args->head;
-	if (!(temp1->n >= 0 && temp1->n <= 127))
+	if (temp1->n < 0 || temp1->n > 127)
 	{
-		dprintf(2, "L%d: I cant pchar, value out of range\n", line_num);
+		dprintf(2, "L%d: can't pchar, value out of range\n", line_num);
 		free_all_args();
 		exit(EXIT_FAILURE);
 	}
@@ -70,7 +70,7 @@ void pstr(stack_t **stack, unsigned int line_num)
 
 	while (temp1 != NULL)
 	{
-		if (!(temp1->n >= 0 && temp1->n <= 127))
+		if (temp1->n < 0 || temp2->n > 127)
 		{
 			break;
 		}

@@ -64,7 +64,7 @@ void symbol_line(void)
  */
 void invalid_command(void)
 {
-	dprintf(2, "L%d: unknown command %s\n", args->line_num,
+	dprintf(2, "L%d: unknown instruction %s\n", args->line_num,
 args->tokens[0]);
 	free_all_args();
 	exit(EXIT_FAILURE);

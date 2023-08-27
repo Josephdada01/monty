@@ -17,7 +17,7 @@ void verify_arguments(int argc)
  */
 void malloc_flop(void)
 {
-	dprintf(2, "Error: malloc flop woefully\n");
+	dprintf(2, "Error: malloc failed\n");
 	free_args();
 	exit(EXIT_FAILURE);
 }
@@ -27,7 +27,7 @@ void malloc_flop(void)
  */
 void get_stream_flop(char *fIlename)
 {
-	dprintf(2, "Error: can't access the file %s\n", fIlename);
+	dprintf(2, "Error: can't open the file %s\n", fIlename);
 	free_args();
 	exit(EXIT_FAILURE);
 }
