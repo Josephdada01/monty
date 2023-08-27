@@ -57,8 +57,7 @@ typedef struct arg_s
 	int stack;
 } arg_t;
 
-int main(int argc, char **argv);
-void initiate_args(void);
+void initiate_args();
 void symbol_line(void);
 void get_command(void);
 void invalid_command(void);

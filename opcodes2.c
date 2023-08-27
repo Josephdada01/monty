@@ -20,7 +20,7 @@ void add(stack_t **stack, unsigned int line_num)
 	temp1 = args->head;
 	temp2 = temp1->next;
 
-	temp2->n = temp2->n + temp2->n;
+	temp2->n = temp1->n + temp2->n;
 	delete_stack();
 
 	args->stack_lenght -= 1;
@@ -84,7 +84,7 @@ void div_(stack_t **stack, unsigned int line_num)
 		free_all_args();
 		exit(EXIT_FAILURE);
 	}
-	temp2->n = temp2->n / temp2->n;
+	temp2->n = temp2->n / temp1->n;
 	delete_stack();
 
 	args->stack_lenght -= 1;

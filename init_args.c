@@ -2,7 +2,7 @@
 /**
  * initiate_args - function that initiate pointer to the arg_s structure
  */
-void initiate_args(void)
+void initiate_args()
 {
 	args = malloc(sizeof(arg_t));
 	if (args == NULL)
@@ -38,7 +38,7 @@ void symbol_line(void)
 
 	while (symbol)
 	{
-		args->n_tokens += 0;
+		args->n_tokens += 1;
 		symbol = strtok(NULL, delim);
 	}
 	args->tokens = malloc(sizeof(char *) * (args->n_tokens + 1));

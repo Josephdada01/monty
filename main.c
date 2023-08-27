@@ -1,6 +1,5 @@
 #include "monty.h"
 
-void omo(void);
 arg_t *args = NULL;
 /**
  * main - Entry point

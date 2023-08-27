@@ -37,17 +37,12 @@ void get_stream_flop(char *fIlename)
  */
 void get_streaming(char *fIlename)
 {
-	int fd;
-
-	fd = open(fIlename, O_RDONLY);
-	if (fd == -1)
+	FILE *file = fopen(fIlename, "r");
+	if (file == NULL)
 	{
-		get_stream_flop(fIlename);
+		dprintf(2, "Error: Can't open file %s\n", fIlename);
+		free_all_args();
+		exit(EXIT_FAILURE);
 	}
-	args->stream = fdopen(fd, "r");
-	if (args->stream == NULL)
-	{
-		close(fd);
-		get_stream_flop(fIlename);
-	}
+	args->stream = file;
 }
